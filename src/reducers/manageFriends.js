@@ -10,6 +10,7 @@ export function manageFriends(state, action){
       const friendArray = state.friends.slice()
       const removalIndex = friendArray.findIndex(friend => friend.id === action.id)
       friendArray.splice(removalIndex, 1)
+      
       return Object.assign({}, state, {
         friends: friendArray
       })
