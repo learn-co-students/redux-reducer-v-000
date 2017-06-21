@@ -78,7 +78,7 @@ describe('manageFriends', () => {
           id: 102
         }
       ]
-    };
+    }
 
     expect(manageFriends(state, {
       type: "REMOVE_FRIEND",
