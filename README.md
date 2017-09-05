@@ -1,6 +1,5 @@
 # Reducers Lab
 
-![reduce](https://media.giphy.com/media/3o7TKwxYkeW0ZvTqsU/giphy.gif)
 ## Objectives
 1. Write a reducer.
 2. The reducer should be a pure function.
@@ -19,7 +18,6 @@ This function will be our reducer, and its job is to return to us a new state.
 3. Both reducers should be pure functions.  This means that the functions cannot change any object defined outside of the functions.  It also means that given an input, the reducers will always return the same output.
 
 ## A Note on the Object Spread Operator, Code from the Future
-![future](https://media.giphy.com/media/l0CRCmMBYQbL7dCmI/giphy.gif)
 
 **Note that the object spread operator is not part of ES6, but proposed for future versions of JS.  We can only use it here because of configurations set up in our .babelrc file.  At the time of this writing it will not work in, for instance, the Chrome Developer's Console. But if you want to write some futuristic code you should be familiar with it!**
 
