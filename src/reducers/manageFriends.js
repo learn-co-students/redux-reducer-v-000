@@ -3,7 +3,7 @@ export function manageFriends(state, action){
     case 'ADD_FRIEND':
       return {friends: state.friends.concat(action.friend)}
     case 'REMOVE_FRIEND':
-      return {friends: state.friends.filter(function(f) {return f.id !== action.id})}
+      return Object.assign({}, state, {friends: state.friends.filter(function(f) {return f.id !== action.id})})
     default:
       return state;
   }
