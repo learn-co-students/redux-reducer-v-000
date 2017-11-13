@@ -22,7 +22,6 @@ export function manageFriends(state, action){
         ]
       });
    
-
     default:
         return state
     }
