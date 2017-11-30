@@ -1,8 +1,10 @@
 export function manageFriends(state, action){
   switch (action.type) {
     case 'ADD_FRIEND':
-      let friend = action.friend
-      return {...state.friends, friends: [...friends, friend]}
+      return Object.assign({}, state, {
+        friends: [...state.friends, action.friend
+        ]
+      });
 
     case "REMOVE_FRIEND":
       const removalIndex = state.friends.findIndex(friend => friend.id === action.id);
