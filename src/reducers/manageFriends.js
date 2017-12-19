@@ -1,13 +1,28 @@
-export function manageFriends(state, action){
-  console.log(action)
+export function manageFriends(state = {
+  friends: [],
+}, action){
   switch(action.type){
     case 'ADD_FRIEND':
-      const friend = action.friend
-      return {...state, friend}
+      return {
+              friends:
+              [...state.friends,
+              action.friend]
+            }
     case 'REMOVE_FRIEND':
-      return {}
+      return {
+        friends:
+        state.friends.filter( (friend) => friend.id !== action.id )
+      }
     default:
     return state;
   }
 }
-// friends: [ { name: 'Avi', hometown: 'NYC', id: 100 } ] }
+// Error: Expected
+// { friends: [ { name: 'Avi', hometown: 'NYC', id: 100 },
+// { name: 'Joe', hometown: 'Boston', id: 101 },
+// { name: 'Steven', hometown: 'Philadephia', id: 102 } ] } }
+//
+// to equal
+// { friends: [ { name: 'Avi', hometown: 'NYC', id: 100 },
+// { name: 'Steven', hometown: 'Philadephia', id: 102 }
+// // ] }
