@@ -22,12 +22,3 @@ export function manageFriends(state, action){
         }
     }
 }
-/*
-    case "ADD_FRIEND":
-      return Object.assign({}, state, {
-        friends: [
-          ...state.friends,
-          action.friend
-        ]
-      });
-*/
