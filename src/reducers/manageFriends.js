@@ -4,14 +4,18 @@ export function manageFriends(state, action){
       return Object.assign({}, state, {
         friends: [
           ...state.friends,
-          {name: action.friend.name,
-          hometown: action.friend.hometown,
-          id: action.friend.id
-        }
-      ]
-    })
+          action.friend
+        ]
+      })
   case 'REMOVE_FRIEND':
-    return {friends: state.friends.filter(friend => friend.id !== action.id)}
+    // return {friends: state.friends.filter(friend => friend.id !== action.id)}
+    const removalIndex = state.friends.findIndex(friend => friend.id === action.id);
+      return Object.assign({}, state, {
+        friends: [
+          ...state.friends.slice(0, removalIndex),
+          ...state.friends.slice(removalIndex + 1)
+        ]
+      });
   default:
     return state;
   }
