@@ -76,13 +76,18 @@ describe('manageFriends', () => {
           name: 'Steven',
           hometown: 'Philadephia',
           id: 102
+        },
+        {
+          name: 'Steven',
+          hometown: 'Philadephia',
+          id: 103
         }
       ]
     };
 
     expect(manageFriends(state, {
       type: "REMOVE_FRIEND",
-      id: 101
+      id: 102
     })).toEqual({
       friends: [
         {
@@ -91,9 +96,14 @@ describe('manageFriends', () => {
           id: 100
         },
         {
+          name: 'Joe',
+          hometown: 'Boston',
+          id: 101
+        },
+        {
           name: 'Steven',
           hometown: 'Philadephia',
-          id: 102
+          id: 103
         }
       ]
     });
