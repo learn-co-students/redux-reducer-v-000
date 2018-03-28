@@ -1,22 +1,31 @@
-export function manageFriends(state = {friends: []}, action){
+export function manageFriends(state, action, newaction){
   switch (action.type) {
     case'ADD_FRIEND':
-    return Object.assign ({}, state, {friends: [...state.friends, action.friend]})
+    return {friends: [...state.friends, action.friend]}
     case'REMOVE_FRIEND':
     const removeIndex = state.friends.findIndex(friend => friend.id === action.id)
-    return Object.assign ({}, state, {friends: [...state.friends.slice(0, removeIndex), ...state.friends.slice(removeIndex + 1)]})
+    return {friends: [...state.friends.slice(0, removeIndex), ...state.friends.slice(removeIndex + 1)]}
     default:
     return state;
   }
-
 }
 
+let state = {friends: []}
+let action = {type: 'ADD_FRIEND'}
+let newaction = {type: 'REMOVE_FRIEND'}
+manageFriends(state, action)
 
 
-// (state = {numberOfPresents: 0}, action){
-//     switch (action.type) {
-//       case 'INCREASE':
-//       return Object.assign({}, state, {numberOfPresents: state.numberOfPresents + 1})
-//       default:
-//       return state;
-//     }
+
+// switch (action.type) {
+//   case 'INCREASE':
+//   return {numberOfPresents: state.numberOfPresents + 1}
+//   default:
+//   return state;
+// }
+// }
+//
+// let state = {numberOfPresents: 0}
+// let action = {type: 'INCREASE'}
+//
+// managePresents(state, action)
