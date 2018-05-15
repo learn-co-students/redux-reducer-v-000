@@ -13,7 +13,7 @@ export function manageFriends(state, action){
       }
     case 'REMOVE_FRIEND':
       let toDelete = new Set([action.id]);
-      let newArray = state.friends.filter(obj => !toDelete.has(obj.id));
+      let newArray = state.friends.filter(friend => !toDelete.has(friend.id));
       return {
         friends: newArray
       }
