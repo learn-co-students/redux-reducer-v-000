@@ -13,3 +13,7 @@ export function manageFriends(state, action){
         return state;
     }
   }
+
+
+
+  // Object.assign == ... or spread operator
