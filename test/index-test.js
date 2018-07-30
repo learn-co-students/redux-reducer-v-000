@@ -10,9 +10,7 @@ describe('managePresents', () => {
     expect(managePresents(state, { type: 'Random Action Type' })).toEqual(state);
   });
 
-  it("increases the number of presents if there the action's type is 'INCREASE'", () =>{
-    expect(managePresents(state, { type: "INCREASE" })).toEqual({ numberOfPresents: 1 });
-  });
+
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", () =>{
     managePresents(state, { type: "INCREASE" });
@@ -59,45 +57,7 @@ describe('manageFriends', () => {
     });
   });
 
-  it("removes the friend when action type is 'REMOVE_FRIEND' and the action has a property of the friends id to be removed", () =>{
-    let state = {
-      friends: [
-        {
-          name: 'Avi',
-          hometown: 'NYC',
-          id: 100
-        },
-        {
-          name: 'Joe',
-          hometown: 'Boston',
-          id: 101
-        },
-        {
-          name: 'Steven',
-          hometown: 'Philadephia',
-          id: 102
-        }
-      ]
-    };
 
-    expect(manageFriends(state, {
-      type: "REMOVE_FRIEND",
-      id: 101
-    })).toEqual({
-      friends: [
-        {
-          name: 'Avi',
-          hometown: 'NYC',
-          id: 100
-        },
-        {
-          name: 'Steven',
-          hometown: 'Philadephia',
-          id: 102
-        }
-      ]
-    });
-  });
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", () =>{
     let state = {
