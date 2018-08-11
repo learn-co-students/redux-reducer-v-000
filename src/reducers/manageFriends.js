@@ -10,8 +10,6 @@ export function manageFriends(state, action){
         id: action.friend.id
       })
 
-      console.log(newFriends)
-      
       return {friends: newFriends}  
     case "REMOVE_FRIEND":
       newFriends = state.friends.filter(friend => friend.id !== action.id)
