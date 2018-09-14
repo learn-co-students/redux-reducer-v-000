@@ -6,7 +6,7 @@ export function manageFriends(state, action){
       let friends = state.friends.filter(friend => friend.id !== action.id ) 
       return { friends }
     default:
-    return {...state};
+    return state;
   }
 }
 
