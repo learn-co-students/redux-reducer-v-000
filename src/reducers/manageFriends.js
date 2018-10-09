@@ -6,7 +6,10 @@ export function manageFriends(state = {
     case "ADD_FRIEND":
       return (
         {...state,
-            action.friend
+            friends: [
+              ...state.friends,
+              action.friend
+            ]
         }
     )
 
