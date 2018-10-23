@@ -6,10 +6,29 @@ export function manageFriends(state, action){
             return addState;
         case 'REMOVE_FRIEND':
             let removeState = {...state};
-            let friends = removeState.friends.filter(friend => friend.id !== action.id);
-            removeState.friends = friends;
-            return removeState;
+            return {...state, friends: removeState.friends.filter(friend => friend.id !== action.id)};
         default:
             return state;
     }
 }
+
+// case "ADD_FRIEND":
+// return (
+//   {...state,
+//       friends: [
+//         ...state.friends,
+//         action.friend
+//       ]
+//   }
+// )
+
+// case "REMOVE_FRIEND":
+// const removalIndex = state.friends.findIndex(friend => friend.id === action.id);
+// return (
+//   {...state,
+//       friends: [
+//         ...state.friends.slice(0, removalIndex),
+//         ...state.friends.slice(removalIndex + 1)
+//       ]
+//   }
+// )
