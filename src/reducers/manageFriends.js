@@ -7,6 +7,7 @@ export function manageFriends(state, action){
 
     case 'REMOVE_FRIEND':
 
+    //try using filter next go around!
     const removeFriend = state.friends.findIndex(friends => friends.id === action.id)
        return (
            {
