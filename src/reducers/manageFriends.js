@@ -12,3 +12,9 @@ export function manageFriends(state = {friends: []}, action){
           return state;
       }
 }
+
+//slice returns the selected objects
+// we build a new friends array that looks like [everything before itemToBeRemoved + everything after]
+
+//The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+//hence [start at zero, end at (but don't include) itemTOBeREmoved]
