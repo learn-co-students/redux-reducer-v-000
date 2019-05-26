@@ -7,12 +7,12 @@ export function manageFriends(state, action){
             )
 
     case "REMOVE_FRIEND":
-      const removeIndex = state.friends.findIndex(friend => friend.id === action.id)
+      const removeId = state.friends.findIndex(friend => friend.id === action.id)
       return (
               {...state,
                 friends: [
-                  ...state.friends.slice(0, removeIndex),
-                  ...state.friends.slice(removeIndex + 1)]
+                  ...state.friends.slice(0, removeId),
+                  ...state.friends.slice(removeId + 1)]
             }
         )
 
