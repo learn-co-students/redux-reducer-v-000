@@ -1,0 +1,5 @@
+{ friends: [ { name: 'Avi', hometown: 'NYC', id: 100 } ], friend: { name: 'Joe', hometown: 'Boston', id: 101 } } to equal 
+{ friends: [ { name: 'Avi', hometown: 'NYC', id: 100 }, { name: 'Joe', hometown: 'Boston', id: 101 } ] }
+
+{ friends: [ { name: 'Joe', hometown: 'Boston', id: 101 } ] } to equal 
+{ friends: [ { name: 'Avi', hometown: 'NYC', id: 100 }, { name: 'Joe', hometown: 'Boston', id: 101 } ] }
