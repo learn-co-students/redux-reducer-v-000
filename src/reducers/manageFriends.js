@@ -1,17 +1,34 @@
-export function manageFriends(state, action){
-  action = {
-    type: "ADD_FRIEND",
-    friend: "Chrome Boi"
+export function manageFriends(
+  state = {
+    friends: []
+  }, action ){
+
+  switch (action.type){
+    case 'ADD_FRIEND':
+      return (
+        { ...state, 
+          friends: [
+            ...state.friends,
+            action.friend
+          ] 
+        }
+      )
+
+    case 'REMOVE_FRIEND':
+
+      const indexOfFriendToBeRemoved = state.friends.findIndex( friend => friend.id === action.id )
+
+      return (
+        { ...state, 
+          friends: [
+            ...state.friends.slice(0, indexOfFriendToBeRemoved),
+            ...state.friends.slice(indexOfFriendToBeRemoved + 1)
+          ] 
+        }
+      )
+
+    default: 
+      return state
+
   }
 }
-
-// function reducer(state, action){      
-//   switch (action.type) {
-//     case 'INCREASE_COUNT':
-//       return {count: state.count + 1}
-//     case 'DECREASE_COUNT':
-//       return {count: state.count - 1}
-//     default:
-//       return state;
-//   }
-// }
