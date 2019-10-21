@@ -13,8 +13,10 @@ export function manageFriends(state, action){
     case 'REMOVE_FRIEND':
       let foundFriend = state.friends.findIndex(friend => friend.id === action.id);
       return (
+        // returns state (without 'friends' key)
         {...state,
-            friends: [
+        //modifies friends property
+            friends: 
               ...state.friends.slice(0, foundFriend),
               ...state.friends.slice(foundFriend + 1)
             ]
