@@ -1,13 +1,26 @@
-let state = {
+const state = {
   friends: []
 }
 export function manageFriends(state, action){
   switch(action.type){
     case 'ADD_FRIEND':
-    console.log(...state)
+      return (
+        {...state,
+          friends: [...state.friends, action.friend]
+        });
+        
     
     case 'REMOVE_FRIEND':
-    console.log(...state)
+      let foundFriend = state.friends.findIndex(friend => friend.id === action.id);
+      return (
+        {...state,
+            friends: [
+              ...state.friends.slice(0, foundFriend),
+              ...state.friends.slice(foundFriend + 1)
+            ]
+        }
+      )
+    
     default:
       return state;
   }
