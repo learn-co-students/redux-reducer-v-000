@@ -8,10 +8,7 @@ export function manageFriends(state = { friends: [] }, action) {
       );
       return {
         ...state,
-        friends: [
-          ...state.friends.slice(0, removeFriend),
-          ...state.friends.slice(removeFriend + 1)
-        ]
+        friends: [...state.friends.slice(0, removeFriend)]
       };
     default:
       return state;
