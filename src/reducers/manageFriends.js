@@ -10,8 +10,11 @@ export function manageFriends(state, action){
       newState.friends.push(newFriend)  //push onto copy of original array
       return newState
     case 'REMOVE_FRIEND':
-      return state.filter((item, index) => !== action.index)
-      
+      const id = action.id 
+      return {
+      		...state, 
+            friends: state.friends.filter(friend => friend.id !== id)
+             }
     default:
       return state;
   }
