@@ -7,9 +7,10 @@ export function manageFriends(state, action){
           hometown: action.friend.hometown,
           id: action.friend.id}
       const newState = {...state}
-      newState.friends.push(newFriend)
+      newState.friends.push(newFriend)  //push onto copy of original array
       return newState
     case 'REMOVE_FRIEND':
+      return state.filter((item, index) => !== action.index)
       
     default:
       return state;
