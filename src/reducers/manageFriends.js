@@ -8,9 +8,3 @@ export function manageFriends(state, action) {
       return state
   }
 }
-
-// friend: {
-//       name: "Chrome Boi"
-//       homewtown: "NYC",
-//       id: 1
-//     }
