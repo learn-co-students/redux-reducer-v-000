@@ -4,6 +4,7 @@
   "description": "Build a reducer to manage state",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
     "debug": "node-debug --hidden node_modules _mocha --watch",
     "debug-ide": "./bin/debug-ide",
     "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
@@ -35,6 +36,7 @@
     "sinon": "^1.17.6"
   },
   "dependencies": {
+    "react-scripts": "3.2.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
   }
