@@ -1,4 +1,6 @@
-let state = { friends: [] };
+let state = {
+  friends: []
+};
 
 export function manageFriends(state, action) {
   switch (action.type) {
@@ -7,11 +9,10 @@ export function manageFriends(state, action) {
         friends: [...state.friends, action.friend]
       };
     case 'REMOVE_FRIEND':
-      let newFriends = state.friends.filter((item) => item.id !== action.id)
-      return { friends: newFriends }
+      return {
+        friends: state.friends.filter(friend => friend.id !== action.id)
+      };
     default:
       return state;
   }
 }
-
-
