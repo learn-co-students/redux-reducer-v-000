@@ -1,15 +1,10 @@
 export function manageFriends(state, action){
   switch (action.type) {
     case 'ADD_FRIEND':
-      let newState = {...state}
-      newState.friends.push(action.friend)
-      return { friends: newState.friends }
+      return {...state, friends: [...state.friends, action.friend]}
     case 'REMOVE_FRIEND':
-      let copy = {...state}
-      let target = copy.friends.find(friend => friend.id === action.id)
-      let targetIndex = copy.friends.indexOf(target)
-      copy.friends.splice(targetIndex, 1)
-      return {friends: copy.friends}
+      let target = state.friends.findIndex(friend => friend.id === action.id)
+      return {...state, friends: [...state.friends.slice(0, target), ...state.friends.slice(target + 1)]}
     default:
       return state
   }
