@@ -5,7 +5,15 @@ export function manageFriends(state, action){
         // When adding a friend, the action will include a friend key assigned to an object with name, hometown, and id keys.
         case 'ADD_FRIEND':
             // return a new state with this friend object added to the friends array.
-            return {friends: state.friends.concat(action.friend)}
+            //return {friends: state.friends.concat(action.friend)}
+            return (
+                {...state,
+                    friends: [
+                        ...state.friends,
+                        action.friend
+                    ]
+                }
+            )
         case 'REMOVE_FRIEND':
             return {friends: state.friends.filter(friend => friend.id != action.id)}
         default:
