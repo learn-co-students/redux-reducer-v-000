@@ -8,7 +8,7 @@ export function manageFriends(state = {friends: []}, action){
                     case 'REMOVE_FRIEND':
                     return {...state, friends: state.friends.filter(friend => friend.id !== action.id) }
                         // run filter on the whole array which is  = state.friends
-                        //  then find out each friend and see if the friend.is matches the action type. In this case action.id
+                        //  then find out each friend and see if the friend.id matches the action type. In this case action.id
                      default:
                         return state;
 
