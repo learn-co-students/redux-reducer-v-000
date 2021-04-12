@@ -2,13 +2,14 @@ export function manageFriends(state = {friends: []}, action){
     switch (action.type) {
         case 'ADD_FRIEND':
             return {
-                friends: [...state.friends, action.friend]
+                ...state, friends: [...state.friends, action.friend]
+                //friends: [...state.friends, action.friend] this is not creating a copy
             }
 
         case 'REMOVE_FRIEND':
             const removalIndex = state.friends.findIndex(friend => friend.id === action.id)
             return {
-                friends: [
+                ...state, friends: [
                     ...state.friends.slice(0, removalIndex),
                     ...state.friends.slice(removalIndex + 1)
                     ]
